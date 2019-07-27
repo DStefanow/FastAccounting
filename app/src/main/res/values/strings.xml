@@ -3,4 +3,6 @@
     <string name="logo">Logo</string>
     <string name="add_new">Add New</string>
     <string name="scan_qr">Scan QR</string>
+    <string name="toast_new_category">The new category is successfully added!</string>
+    <string name="insert">Insert</string>
 </resources>
