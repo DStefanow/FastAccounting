@@ -26,7 +26,10 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menuItemAddNew: openAddNewCategoryIntent(); break;
+            case R.id.menuItemAddNewCategory: openAddNewCategoryIntent(); break;
+            case R.id.menuItemAddNewBilling:
+                Toast.makeText(this, "Add New Billing selected", Toast.LENGTH_SHORT).show();
+                break;
             case R.id.menuItemScanQr:
                 Toast.makeText(this, "Scan QR selected", Toast.LENGTH_SHORT).show();
                 break;

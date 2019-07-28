@@ -1,10 +1,12 @@
 package com.dobromir.stefanov.fastaccounting;
 
+import android.content.res.Resources;
 import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
@@ -14,6 +16,7 @@ public class AddNewCategory extends AppCompatActivity {
     Spinner typeSpinner;
     CheckBox checkBoxIsSubcategory;
     LinearLayout layoutMainCategory, layoutIsRepeating;
+    AutoCompleteTextView editTxtCategoryName;
 
 
     // Data object
@@ -33,8 +36,10 @@ public class AddNewCategory extends AppCompatActivity {
         typeSpinner = (Spinner) findViewById(R.id.spinnerType);
         layoutMainCategory = (LinearLayout) findViewById(R.id.layoutMainCategory);
         layoutIsRepeating = (LinearLayout) findViewById(R.id.layoutIsRepeating);
+        editTxtCategoryName = (AutoCompleteTextView) findViewById(R.id.editTxtCategoryName);
 
         PopulateTypeSpinner();
+        SetupAutofillCategoryName();
     }
 
     private void PopulateTypeSpinner() {
@@ -43,6 +48,14 @@ public class AddNewCategory extends AppCompatActivity {
 
         typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         typeSpinner.setAdapter(typeAdapter);
+    }
+
+    private void SetupAutofillCategoryName() {
+        ArrayAdapter<String> autofillAdapter = new ArrayAdapter<String>(
+                this, android.R.layout.simple_dropdown_item_1line, getResources().getStringArray(R.array.possible_categories));
+
+        editTxtCategoryName.setThreshold(2);
+        editTxtCategoryName.setAdapter(autofillAdapter);
     }
 
     public void SubmitCategory(View view) {

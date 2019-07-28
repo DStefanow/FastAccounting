@@ -1,7 +1,26 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <!-- Array for possible types -->
     <string-array name="types">
         <item>Income</item>
-        <item>Expenditure</item>
+        <item>Expense</item>
+    </string-array>
+    <!--Array with some examples for the categories -->
+    <string-array name="possible_categories">
+        <item>Food</item>
+        <item>Clothes</item>
+        <item>Salary</item>
+        <item>Rent</item>
+        <item>Car</item>
+        <item>Bills for Water</item>
+        <item>Bills for Electricity</item>
+        <item>Fuel</item>
+        <item>Transport Card</item>
+        <item>Fitness</item>
+        <item>Holiday</item>
+        <item>Present</item>
+        <item>Software</item>
+        <item>Hardware</item>
+        <item>Repairs</item>
     </string-array>
 </resources>

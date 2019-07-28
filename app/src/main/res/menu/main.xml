@@ -3,16 +3,23 @@
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <item
-        android:id="@+id/menuItemAddNew"
+        android:id="@+id/menuItemAddNewCategory"
         android:icon="@drawable/ic_add_circle_white_24dp"
-        android:orderInCategory="3"
+        android:orderInCategory="1"
         android:title="@string/add_new"
         app:showAsAction="ifRoom" />
 
     <item
+        android:id="@+id/menuItemAddNewBilling"
+        android:icon="@drawable/ic_money"
+        android:orderInCategory="2"
+        android:title="@string/add_new_billing"
+        app:showAsAction="ifRoom"/>
+
+    <item
         android:id="@+id/menuItemScanQr"
         android:icon="@drawable/ic_qr_code"
-        android:orderInCategory="4"
+        android:orderInCategory="3"
         android:title="@string/scan_qr"
         app:showAsAction="ifRoom" />
 </menu>
