@@ -1,0 +1,18 @@
+---------------------------- FAST ACCOUNTING ----------------------------
+****************************** POINTS TO DO *****************************
+
+1. Create the db structure:
+	1.0. Category:
+		- id INT NOT NULL PRIMARY KEY;
+		- type_id INT (1 or 2);
+		- category_name VARCHAR(32);
+		- parent_category_id INT DEFAULT NULL;
+		- repeat_on INT DEFAULT NULL;
+	1.1. Payment:
+		- id INT NOT NULL PRIMARY KEY;
+		- type_id INT (1 or 2);
+		- category_id NOT NULL;
+		- amout DECIMAL NOT NULL;
+		- note VARCHAR(64) DEFAULT NULL;
+		
+2. Add a Recycler View for visualization;
