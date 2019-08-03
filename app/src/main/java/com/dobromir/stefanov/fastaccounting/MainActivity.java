@@ -9,7 +9,8 @@ import android.view.MenuItem;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
-    private static final int ADD_NEW_CATEGORY_INTENT_ID = 2;
+    private static final int ADD_NEW_CATEGORY_INTENT_ID = 2,
+            ADD_NEW_PAYMENT_ID = 3;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,10 +27,8 @@ public class MainActivity extends AppCompatActivity {
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.menuItemAddNewCategory: openAddNewCategoryIntent(); break;
-            case R.id.menuItemAddNewBilling:
-                Toast.makeText(this, "Add New Billing selected", Toast.LENGTH_SHORT).show();
-                break;
+            case R.id.menuItemAddNewCategory: startNewIntentForResult(ADD_NEW_CATEGORY_INTENT_ID); break;
+            case R.id.menuItemAddNewBilling: startNewIntentForResult(ADD_NEW_PAYMENT_ID); break;
             case R.id.menuItemScanQr:
                 Toast.makeText(this, "Scan QR selected", Toast.LENGTH_SHORT).show();
                 break;
@@ -45,11 +44,22 @@ public class MainActivity extends AppCompatActivity {
             if (resultCode == RESULT_OK) {
                 Toast.makeText(this, R.string.toast_new_category, Toast.LENGTH_SHORT).show();
             }
+        } else if (requestCode == ADD_NEW_PAYMENT_ID) {
+            if (resultCode == RESULT_OK) {
+                Toast.makeText(this, R.string.toast_new_payment, Toast.LENGTH_SHORT).show();
+            }
         }
     }
 
-    private void openAddNewCategoryIntent() {
-        Intent addNewCategoryIntent = new Intent(this, AddNewCategory.class);
-        startActivityForResult(addNewCategoryIntent, ADD_NEW_CATEGORY_INTENT_ID);
+    private void startNewIntentForResult(int intentId) {
+        Intent newIntent = null;
+
+        if (intentId == ADD_NEW_CATEGORY_INTENT_ID) {
+            newIntent = new Intent(this, AddNewCategory.class);
+        } else if (intentId == ADD_NEW_PAYMENT_ID) {
+            newIntent = new Intent(this, AddNewPayment.class);
+        }
+
+        startActivityForResult(newIntent, intentId);
     }
 }

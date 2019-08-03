@@ -6,14 +6,14 @@
         android:id="@+id/menuItemAddNewCategory"
         android:icon="@drawable/ic_add_circle_white_24dp"
         android:orderInCategory="1"
-        android:title="@string/add_new"
+        android:title="@string/add_new_category"
         app:showAsAction="ifRoom" />
 
     <item
         android:id="@+id/menuItemAddNewBilling"
         android:icon="@drawable/ic_money"
         android:orderInCategory="2"
-        android:title="@string/add_new_billing"
+        android:title="@string/add_new_payment"
         app:showAsAction="ifRoom"/>
 
     <item

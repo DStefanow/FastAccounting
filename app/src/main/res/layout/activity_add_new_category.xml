@@ -187,7 +187,7 @@
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:background="@color/colorPrimaryDark"
-        android:text="@string/insert"
+        android:text="@string/add_new_category"
         android:textColor="@color/colorTextIcons"
         android:textSize="16sp"
         android:onClick="SubmitCategory"/>

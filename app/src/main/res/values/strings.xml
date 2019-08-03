@@ -1,16 +1,21 @@
 <resources>
     <string name="app_name">Fast Accounting</string>
     <string name="logo">Logo</string>
-    <string name="add_new">Add New Category</string>
+    <string name="add_new_category">Add New Category</string>
+    <string name="add_new_payment">Add New Payment</string>
     <string name="scan_qr">Scan QR</string>
     <string name="toast_new_category">The new category is successfully added!</string>
-    <string name="insert">Insert</string>
+    <string name="toast_new_payment">The new payment is successfully added!</string>
     <string name="hint_category_name">Enter category name</string>
     <string name="type">Type:</string>
     <string name="is_subcategory_txt_view">Is subcategory:</string>
     <string name="main_category">Main Category:</string>
     <string name="repeat_monthly">Repeat monthly:</string>
     <string name="pick_up_date">Pick up day: </string>
-    <string name="add_new_billing">Add New Billing</string>
     <string name="hint_day_for_schedule">From 1 to 28</string>
+    <string name="category">Category:</string>
+    <string name="amount">Amount: </string>
+    <string name="amount_hint">Enter a value</string>
+    <string name="note">Note (optional):</string>
+    <string name="note_hint">Enter a note (max 50 symbols)</string>
 </resources>
