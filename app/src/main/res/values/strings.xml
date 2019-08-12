@@ -18,4 +18,5 @@
     <string name="amount_hint">Enter a value</string>
     <string name="note">Note (optional):</string>
     <string name="note_hint">Enter a note (max 50 symbols)</string>
+    <string name="img_type_label">Income/Outcome</string>
 </resources>
