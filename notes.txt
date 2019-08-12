@@ -4,11 +4,10 @@
 1. Create the db structure:
 	1.0. Category:
 		- id INT NOT NULL PRIMARY KEY;
-		- type_id INT (1 or 2);
 		- category_name VARCHAR(32);
 		- parent_category_id INT DEFAULT NULL;
 		- repeat_on INT DEFAULT NULL;
-	1.1. Payment:
+	1.1. Transaction:
 		- id INT NOT NULL PRIMARY KEY;
 		- type_id INT (1 or 2);
 		- category_id NOT NULL;
