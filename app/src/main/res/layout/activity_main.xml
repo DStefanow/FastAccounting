@@ -12,8 +12,5 @@
         android:name="com.dobromir.stefanov.fastaccounting.Fragments.ListTransactionsFragment"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:layout="@layout/fragment_list_transactions"
-        >
-
-    </fragment>
+        tools:layout="@layout/fragment_list_transactions" />
 </LinearLayout>

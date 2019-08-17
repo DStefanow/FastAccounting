@@ -31,9 +31,9 @@ public class ListTransactionsFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
 
         layoutManager = new LinearLayoutManager(this.getActivity());
-        recyclerView.setLayoutManager(layoutManager);
-
         transactionAdapter = new TransactionAdapter(this.getActivity(), ApplicationCore.accTransactions);
+
+        recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(transactionAdapter);
     }
 
