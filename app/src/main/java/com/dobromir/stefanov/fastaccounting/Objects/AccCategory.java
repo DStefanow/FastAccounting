@@ -13,6 +13,11 @@ public class AccCategory {
         this.repeat_on = repeat_on;
     }
 
+
+    public AccCategory(String categoryName) {
+        this.categoryName = categoryName;
+    }
+
     public int getId() {
         return id;
     }

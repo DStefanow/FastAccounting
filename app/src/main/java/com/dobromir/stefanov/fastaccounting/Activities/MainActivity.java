@@ -8,9 +8,10 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
 
+import com.dobromir.stefanov.fastaccounting.Interfaces.ItemClicked;
 import com.dobromir.stefanov.fastaccounting.R;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements ItemClicked {
     private static final int ADD_NEW_CATEGORY_INTENT_ID = 2,
             ADD_NEW_PAYMENT_ID = 3;
 
@@ -63,5 +64,10 @@ public class MainActivity extends AppCompatActivity {
         }
 
         startActivityForResult(newIntent, intentId);
+    }
+
+    @Override
+    public void onItemClicked(int i) {
+        // TODO .. Not for now
     }
 }
