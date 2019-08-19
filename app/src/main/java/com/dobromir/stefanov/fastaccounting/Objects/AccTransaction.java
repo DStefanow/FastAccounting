@@ -1,11 +1,14 @@
 package com.dobromir.stefanov.fastaccounting.Objects;
 
+import java.time.LocalDateTime;
+
 public class AccTransaction {
     private int id;
     private AccountingType accType;
     private AccCategory accCategory;
     private double amount;
     private String note;
+    private LocalDateTime transactionTime;
 
     public AccTransaction(int id, AccountingType accType, AccCategory accCategory, double amount, String note) {
         this.id = id;
@@ -33,5 +36,9 @@ public class AccTransaction {
 
     public String getNote() {
         return note;
+    }
+
+    public LocalDateTime getDateOn() {
+        return transactionTime;
     }
 }

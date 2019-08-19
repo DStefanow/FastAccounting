@@ -12,6 +12,7 @@
 		- type_id INT (1 or 2);
 		- category_id NOT NULL;
 		- amout DECIMAL NOT NULL;
+		- time_of_transaction INTEGER NOT NULL;
 		- note VARCHAR(64) DEFAULT NULL;
 		
 2. Add a Recycler View for visualization;
