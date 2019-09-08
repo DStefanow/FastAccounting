@@ -6,6 +6,7 @@ import androidx.room.ForeignKey;
 import androidx.room.PrimaryKey;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity(tableName = "transactions",
     foreignKeys = @ForeignKey(entity = AccCategory.class,
@@ -27,9 +28,9 @@ public class AccTransaction {
     private String note;
 
     @ColumnInfo(name = "transaction_time")
-    private LocalDateTime transactionTime;
+    private Date transactionTime;
 
-    public AccTransaction(int id, AccountingType accType, int categoryId, double amount, String note, LocalDateTime transactionTime) {
+    public AccTransaction(int id, AccountingType accType, int categoryId, double amount, String note, Date transactionTime) {
         setId(id);
         setAccType(accType);
         setCategoryId(categoryId);
@@ -86,11 +87,11 @@ public class AccTransaction {
         this.note = note;
     }
 
-    public LocalDateTime getTransactionTime() {
+    public Date getTransactionTime() {
         return this.transactionTime;
     }
 
-    public void setTransactionTime(LocalDateTime transactionTime) {
+    public void setTransactionTime(Date transactionTime) {
         this.transactionTime = transactionTime;
     }
 }
