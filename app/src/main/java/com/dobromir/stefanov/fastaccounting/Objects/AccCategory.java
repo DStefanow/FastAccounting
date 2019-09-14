@@ -9,7 +9,7 @@ import androidx.room.PrimaryKey;
 
 @Entity(tableName = "categories",
     indices = {
-        @Index("id"),
+        @Index(value = {"id"}, unique = true),
         @Index(value = {"category_name"}, unique = true)
     })
 public class AccCategory {

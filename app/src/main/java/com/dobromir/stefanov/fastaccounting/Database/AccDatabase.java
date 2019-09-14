@@ -15,7 +15,7 @@ import com.dobromir.stefanov.fastaccounting.Objects.AccCategory;
 import com.dobromir.stefanov.fastaccounting.Objects.AccTransaction;
 
 
-@Database(entities = {AccCategory.class, AccTransaction.class}, version =  1)
+@Database(entities = {AccCategory.class, AccTransaction.class}, version =  1, exportSchema = false)
 @TypeConverters({LocalDateConverter.class, AccTypeConverter.class})
 public abstract class AccDatabase extends RoomDatabase {
     public abstract AccCategoryDao accCategoryDao();
