@@ -13,24 +13,21 @@ import androidx.room.PrimaryKey;
         @Index(value = {"category_name"}, unique = true)
     })
 public class AccCategory {
-    @NonNull
     @PrimaryKey(autoGenerate = true)
+    @NonNull
     private int id;
 
     @ColumnInfo(name = "category_name")
+    @NonNull
     private String categoryName;
 
     @ColumnInfo(name = "parent_category_id")
     private int parentCategoryId;
 
-    @ColumnInfo(name = "repeat_on")
-    private int repeatOn;
-
-    public AccCategory(int id, String categoryName, int parentCategoryId, int repeatOn) {
+    public AccCategory(int id, String categoryName, int parentCategoryId) {
         setId(id);
         setCategoryName(categoryName);
         setParentCategoryId(parentCategoryId);
-        setRepeatOn(repeatOn);
     }
 
     @Ignore
@@ -69,17 +66,5 @@ public class AccCategory {
         }
 
         this.parentCategoryId = parentCategoryId;
-    }
-
-    public int getRepeatOn() {
-        return repeatOn;
-    }
-
-    public void setRepeatOn(int repeatOn) {
-        if (repeatOn < 1 ||repeatOn > 28) {
-            return;
-        }
-
-        this.repeatOn  = repeatOn;
     }
 }
