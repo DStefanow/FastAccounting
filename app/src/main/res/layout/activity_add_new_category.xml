@@ -7,7 +7,7 @@
     android:orientation="vertical"
     tools:context=".Activities.AddNewCategory">
 
-    <android.support.design.widget.TextInputLayout
+    <com.google.android.material.textfield.TextInputLayout
         android:id="@+id/floatingHintCategoryName"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -28,7 +28,7 @@
             android:textColor="@color/colorPrimaryText"
             android:textColorHint="@color/colorSecondaryText" />
 
-    </android.support.design.widget.TextInputLayout>
+    </com.google.android.material.textfield.TextInputLayout>
 
 
     <LinearLayout
