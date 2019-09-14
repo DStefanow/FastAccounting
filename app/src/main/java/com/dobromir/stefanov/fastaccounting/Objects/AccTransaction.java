@@ -30,13 +30,16 @@ public class AccTransaction {
     private AccountingType accType;
 
     @ColumnInfo(name = "category_id")
+    @NonNull
     private int categoryId;
 
+    @NonNull
     private double amount;
 
     private String note;
 
     @ColumnInfo(name = "transaction_time")
+    @NonNull
     private Date transactionTime;
 
     public AccTransaction(int id, AccountingType accType, int categoryId, double amount, String note, Date transactionTime) {
