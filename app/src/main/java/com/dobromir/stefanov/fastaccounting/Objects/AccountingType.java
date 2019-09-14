@@ -1,5 +1,8 @@
 package com.dobromir.stefanov.fastaccounting.Objects;
 
+import androidx.room.Ignore;
+import androidx.room.TypeConverter;
+
 // Define the basic accounting types
 public enum AccountingType {
     INCOME(0),
@@ -12,6 +15,6 @@ public enum AccountingType {
     }
 
     public int getAccTypeCode() {
-        return accTypeCode;
+        return this.accTypeCode;
     }
 }

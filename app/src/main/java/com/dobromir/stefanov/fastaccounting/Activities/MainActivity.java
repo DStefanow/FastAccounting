@@ -1,12 +1,13 @@
 package com.dobromir.stefanov.fastaccounting.Activities;
 
 import android.content.Intent;
-import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Toast;
+
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.dobromir.stefanov.fastaccounting.Interfaces.ItemClicked;
 import com.dobromir.stefanov.fastaccounting.R;

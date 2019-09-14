@@ -1,23 +1,32 @@
 package com.dobromir.stefanov.fastaccounting.Objects;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
 import androidx.room.ForeignKey;
+import androidx.room.Index;
 import androidx.room.PrimaryKey;
+import androidx.room.TypeConverters;
 
-import java.time.LocalDateTime;
 import java.util.Date;
 
+import com.dobromir.stefanov.fastaccounting.Converters.AccTypeConverter;
+
 @Entity(tableName = "transactions",
+    indices = @Index("id"),
     foreignKeys = @ForeignKey(entity = AccCategory.class,
         parentColumns = "id",
         childColumns = "category_id",
-        onDelete = ForeignKey.CASCADE))
+        onDelete = ForeignKey.CASCADE
+    )
+)
 public class AccTransaction {
-    @PrimaryKey
+    @NonNull
+    @PrimaryKey(autoGenerate = true)
     private int id;
 
     @ColumnInfo(name = "acc_type")
+    @TypeConverters(AccTypeConverter.class)
     private AccountingType accType;
 
     @ColumnInfo(name = "category_id")

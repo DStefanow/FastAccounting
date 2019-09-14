@@ -1,11 +1,13 @@
 package com.dobromir.stefanov.fastaccounting.Adapters;
 
 import android.content.Context;
-import android.support.annotation.NonNull;
-import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.recyclerview.widget.RecyclerView;
+
 import java.util.ArrayList;
 
 import com.dobromir.stefanov.fastaccounting.Interfaces.ItemClicked;
@@ -35,7 +37,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
         AccTransaction accTransaction= transactions.get(i);
 
         transactionViewHolder.itemView.setTag(accTransaction);
-        transactionViewHolder.txtViewCategoryName.setText(accTransaction.getAccCategory().getCategoryName());
+        transactionViewHolder.txtViewCategoryName.setText(accTransaction.getCategoryId());
         transactionViewHolder.txtViewAmount.setText(String.valueOf(accTransaction.getAmount()));
         transactionViewHolder.txtViewNote.setText(accTransaction.getNote());
 
@@ -48,6 +50,6 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
 
     @Override
     public int getItemCount() {
-        return transactions.size();
+        return 0; //transactions.size();
     }
 }

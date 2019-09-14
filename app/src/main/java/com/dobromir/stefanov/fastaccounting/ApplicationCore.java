@@ -2,6 +2,7 @@ package com.dobromir.stefanov.fastaccounting;
 
 import android.app.Application;
 
+import com.dobromir.stefanov.fastaccounting.Database.AccDatabase;
 import com.dobromir.stefanov.fastaccounting.Objects.AccCategory;
 import com.dobromir.stefanov.fastaccounting.Objects.AccTransaction;
 import com.dobromir.stefanov.fastaccounting.Objects.AccountingType;
@@ -10,24 +11,27 @@ import java.util.ArrayList;
 
 public class ApplicationCore extends Application {
     public static ArrayList<AccTransaction> accTransactions;
+    public static AccDatabase dbManager;
 
     @Override
     public void onCreate() {
         super.onCreate();
 
+        dbManager = AccDatabase.getDatabase(this);
         AddExampleTransactions();
     }
 
     public static void AddExampleTransactions() {
         // Create some categories
-        ArrayList<AccCategory> accCategories = new ArrayList<AccCategory>();
+        /**
+        ArrayList<AccCategory> accCategories = new ArrayList<>();
         accCategories.add(new AccCategory("Rent"));
         accCategories.add(new AccCategory("Salary"));
         accCategories.add(new AccCategory("Car"));
         accCategories.add(new AccCategory("Stocks"));
         accCategories.add(new AccCategory("Food"));
 
-        accTransactions = new ArrayList<AccTransaction>();
+        accTransactions = new ArrayList<>();
         accTransactions.add(new AccTransaction(1, AccountingType.OUTCOME, accCategories.get(0),
                 520, "При селяните в Студентски"));
         accTransactions.add(new AccTransaction(2, AccountingType.INCOME, accCategories.get(0),
@@ -40,5 +44,6 @@ public class ApplicationCore extends Application {
                 accCategories.get(3), 0.123, "Слабо"));
         accTransactions.add(new AccTransaction(6, AccountingType.OUTCOME,
                 accCategories.get(4), 1200, "Trea se qde"));
+         */
     }
 }

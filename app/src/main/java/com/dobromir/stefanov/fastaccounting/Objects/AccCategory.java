@@ -1,14 +1,20 @@
 package com.dobromir.stefanov.fastaccounting.Objects;
 
+import androidx.annotation.NonNull;
 import androidx.room.ColumnInfo;
 import androidx.room.Entity;
+import androidx.room.Ignore;
 import androidx.room.Index;
 import androidx.room.PrimaryKey;
 
 @Entity(tableName = "categories",
-    indices = {@Index(value = {"category_name"}, unique = true)})
+    indices = {
+        @Index("id"),
+        @Index(value = {"category_name"}, unique = true)
+    })
 public class AccCategory {
-    @PrimaryKey
+    @NonNull
+    @PrimaryKey(autoGenerate = true)
     private int id;
 
     @ColumnInfo(name = "category_name")
@@ -27,6 +33,7 @@ public class AccCategory {
         setRepeatOn(repeatOn);
     }
 
+    @Ignore
     public AccCategory(String categoryName) {
         setCategoryName(categoryName);
     }
