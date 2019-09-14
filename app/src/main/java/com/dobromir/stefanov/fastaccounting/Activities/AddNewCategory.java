@@ -17,13 +17,12 @@ public class AddNewCategory extends AppCompatActivity {
     // View objects
     Spinner typeSpinner;
     CheckBox checkBoxIsSubcategory;
-    LinearLayout layoutMainCategory, layoutIsRepeating;
+    LinearLayout layoutMainCategory;
     AutoCompleteTextView editTxtCategoryName;
 
 
     // Data object
     boolean isSubcategory = false;
-    boolean isRepeating = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -37,7 +36,6 @@ public class AddNewCategory extends AppCompatActivity {
         checkBoxIsSubcategory = (CheckBox) findViewById(R.id.checkBoxIsSubcategory);
         typeSpinner = (Spinner) findViewById(R.id.spinnerType);
         layoutMainCategory = (LinearLayout) findViewById(R.id.layoutMainCategory);
-        layoutIsRepeating = (LinearLayout) findViewById(R.id.layoutIsRepeating);
         editTxtCategoryName = (AutoCompleteTextView) findViewById(R.id.editTxtCategoryName);
 
         PopulateTypeSpinner();
@@ -74,18 +72,6 @@ public class AddNewCategory extends AppCompatActivity {
         } else {
             isSubcategory = false;
             layoutMainCategory.setVisibility(View.GONE);
-        }
-    }
-
-    public void IsRepeatingChanged(View view) {
-        boolean isChecked = ((CheckBox) view).isChecked();
-
-        if (isChecked) {
-            isRepeating = true;
-            layoutIsRepeating.setVisibility(View.VISIBLE);
-        } else {
-            isRepeating = false;
-            layoutIsRepeating.setVisibility(View.GONE);
         }
     }
 }
