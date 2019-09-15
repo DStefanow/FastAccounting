@@ -24,8 +24,7 @@ public class AccCategory {
     @ColumnInfo(name = "parent_category_id")
     private int parentCategoryId;
 
-    public AccCategory(int id, String categoryName, int parentCategoryId) {
-        setId(id);
+    public AccCategory(String categoryName, int parentCategoryId) {
         setCategoryName(categoryName);
         setParentCategoryId(parentCategoryId);
     }
