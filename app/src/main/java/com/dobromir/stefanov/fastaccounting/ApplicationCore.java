@@ -18,32 +18,5 @@ public class ApplicationCore extends Application {
         super.onCreate();
 
         dbManager = AccDatabase.getDatabase(this);
-        AddExampleTransactions();
-    }
-
-    public static void AddExampleTransactions() {
-        // Create some categories
-        /**
-        ArrayList<AccCategory> accCategories = new ArrayList<>();
-        accCategories.add(new AccCategory("Rent"));
-        accCategories.add(new AccCategory("Salary"));
-        accCategories.add(new AccCategory("Car"));
-        accCategories.add(new AccCategory("Stocks"));
-        accCategories.add(new AccCategory("Food"));
-
-        accTransactions = new ArrayList<>();
-        accTransactions.add(new AccTransaction(1, AccountingType.OUTCOME, accCategories.get(0),
-                520, "При селяните в Студентски"));
-        accTransactions.add(new AccTransaction(2, AccountingType.INCOME, accCategories.get(0),
-                400, "Lulin 5"));
-        accTransactions.add(new AccTransaction(3, AccountingType.INCOME, accCategories.get(1),
-                1787, "На 15то число се случват чудеса"));
-        accTransactions.add(new AccTransaction(4, AccountingType.OUTCOME, accCategories.get(2),
-                100, "Sometimes shits happens"));
-        accTransactions.add(new AccTransaction(5, AccountingType.INCOME,
-                accCategories.get(3), 0.123, "Слабо"));
-        accTransactions.add(new AccTransaction(6, AccountingType.OUTCOME,
-                accCategories.get(4), 1200, "Trea se qde"));
-         */
     }
 }
