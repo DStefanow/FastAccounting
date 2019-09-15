@@ -32,7 +32,7 @@ public class ListTransactionsFragment extends Fragment {
         recyclerView.setHasFixedSize(true);
 
         layoutManager = new LinearLayoutManager(this.getActivity());
-        transactionAdapter = new TransactionAdapter(this.getActivity(), ApplicationCore.accTransactions);
+        transactionAdapter = new TransactionAdapter(this.getActivity(), null);
 
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(transactionAdapter);
