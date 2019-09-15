@@ -16,7 +16,7 @@ public interface AccCategoryDao {
     @Query("SELECT * FROM categories")
     LiveData<List<AccCategory>> getAllCategories();
 
-    @Query("SELECT * FROM categories WHERE parent_category_id IS NULL")
+    @Query("SELECT * FROM categories WHERE parent_category_id != 0")
     LiveData<List<AccCategory>> getAllMainCategories();
 
     @Insert
