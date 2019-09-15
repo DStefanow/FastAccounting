@@ -8,7 +8,7 @@ import android.view.ViewGroup;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
-import java.util.ArrayList;
+import java.util.List;
 
 import com.dobromir.stefanov.fastaccounting.Interfaces.ItemClicked;
 import com.dobromir.stefanov.fastaccounting.R;
@@ -17,10 +17,10 @@ import com.dobromir.stefanov.fastaccounting.Objects.*;
 
 
 public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHolder> {
-    private ArrayList<AccTransaction> transactions;
+    private List<AccCategory> transactions;
     ItemClicked itemClicked;
 
-    public TransactionAdapter(Context context, ArrayList<AccTransaction> transactions) {
+    public TransactionAdapter(Context context, List<AccCategory> transactions) {
         itemClicked = (ItemClicked) context;
         this.transactions = transactions;
     }
@@ -34,6 +34,12 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
 
     @Override
     public void onBindViewHolder(@NonNull TransactionViewHolder transactionViewHolder, int i) {
+        if (this.transactions != null) {
+            AccCategory currentCategory = transactions.get(i);
+            transactionViewHolder.txtViewCategoryName.setText(currentCategory.getCategoryName());
+        }
+
+        /**
         AccTransaction accTransaction= transactions.get(i);
 
         transactionViewHolder.itemView.setTag(accTransaction);
@@ -46,6 +52,7 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
         } else {
             transactionViewHolder.imgViewType.setImageResource(R.drawable.ic_arrow_downward_red_24dp);
         }
+         */
     }
 
     @Override
@@ -55,5 +62,10 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
         }
 
         return 0;
+    }
+
+    public void setTransactions(List<AccCategory> accCategories) {
+        this.transactions = accCategories;
+        notifyDataSetChanged();
     }
 }
