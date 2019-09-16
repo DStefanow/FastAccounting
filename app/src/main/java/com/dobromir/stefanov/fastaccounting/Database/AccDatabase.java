@@ -44,6 +44,7 @@ public abstract class AccDatabase extends RoomDatabase {
 
         @Override
         protected Void doInBackground(final Void... params) {
+            mAccCategoryDao.deleteAllCategories();
             mAccCategoryDao.insertNewAccCategory(new AccCategory("Food", 0));
             mAccCategoryDao.insertNewAccCategory(new AccCategory("Car", 0));
             return null;

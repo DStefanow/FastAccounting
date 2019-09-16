@@ -5,8 +5,7 @@
     android:layout_height="wrap_content"
     android:orientation="vertical">
     
-    <!-- <androidx.cardview.widget.CardView -->
-    <com.google.android.material.card.MaterialCardView
+    <androidx.cardview.widget.CardView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_margin="5dp"
@@ -37,7 +36,7 @@
                 android:orientation="vertical">
 
                 <TextView
-                    android:id="@+id/txtVIewCategoryName"
+                    android:id="@+id/txtViewCategoryName"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="10dp"
@@ -65,7 +64,6 @@
                     android:textColor="@color/colorSecondaryText" />
             </LinearLayout>
         </LinearLayout>
-
-    </com.google.android.material.card.MaterialCardView>
+    </androidx.cardview.widget.CardView>
 
 </LinearLayout>

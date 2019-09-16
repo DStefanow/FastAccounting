@@ -22,6 +22,6 @@ public interface AccCategoryDao {
     @Insert
     void insertNewAccCategory(AccCategory accCategory);
 
-    //@Delete
-    //void deleteAccCategory(AccCategory accCategory);
+    @Query("DELETE FROM categories")
+    void deleteAllCategories();
 }

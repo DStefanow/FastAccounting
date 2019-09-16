@@ -19,6 +19,8 @@ public class AccCategoryViewModel extends AndroidViewModel {
     public AccCategoryViewModel(@NonNull Application application) {
         super(application);
         accCategoryRepository = new AccCategoryRepository(application);
+        allCategories = accCategoryRepository.getAllCategories();
+        allMainCategories = accCategoryRepository.getAllMainCategories();
     }
 
     public LiveData<List<AccCategory>> getAllCategories() {

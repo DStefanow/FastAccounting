@@ -8,9 +8,16 @@ import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.lifecycle.Observer;
+import androidx.lifecycle.ViewModelProvider;
 
+import com.dobromir.stefanov.fastaccounting.Adapters.TransactionAdapter;
 import com.dobromir.stefanov.fastaccounting.Interfaces.ItemClicked;
+import com.dobromir.stefanov.fastaccounting.Objects.AccCategory;
 import com.dobromir.stefanov.fastaccounting.R;
+import com.dobromir.stefanov.fastaccounting.VIewModel.AccCategoryViewModel;
+
+import java.util.List;
 
 public class MainActivity extends AppCompatActivity implements ItemClicked {
     private static final int ADD_NEW_CATEGORY_INTENT_ID = 2,

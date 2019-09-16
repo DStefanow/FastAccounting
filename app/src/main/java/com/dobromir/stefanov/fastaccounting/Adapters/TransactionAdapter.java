@@ -1,6 +1,7 @@
 package com.dobromir.stefanov.fastaccounting.Adapters;
 
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,9 +21,8 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
     private List<AccCategory> transactions;
     ItemClicked itemClicked;
 
-    public TransactionAdapter(Context context, List<AccCategory> transactions) {
+    public TransactionAdapter(Context context) {
         itemClicked = (ItemClicked) context;
-        this.transactions = transactions;
     }
 
     @NonNull
@@ -65,6 +65,9 @@ public class TransactionAdapter extends RecyclerView.Adapter<TransactionViewHold
     }
 
     public void setTransactions(List<AccCategory> accCategories) {
+        for (AccCategory accCategory : accCategories) {
+            Log.d("Adapter", "Dobata testing: acc category - " + accCategory.getCategoryName());
+        }
         this.transactions = accCategories;
         notifyDataSetChanged();
     }

@@ -43,7 +43,7 @@ public class AccCategory {
     }
 
     public String getCategoryName() {
-        return categoryName;
+        return this.categoryName;
     }
 
     public void setCategoryName(String categoryName) {
