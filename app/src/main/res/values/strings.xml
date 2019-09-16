@@ -6,6 +6,7 @@
     <string name="scan_qr">Scan QR</string>
     <string name="toast_new_category">The new category is successfully added!</string>
     <string name="toast_new_payment">The new payment is successfully added!</string>
+    <string name="toast_category_name_check">Category name must be at least 3 characters</string>
     <string name="hint_category_name">Enter category name</string>
     <string name="type">Type:</string>
     <string name="is_subcategory_txt_view">Is subcategory:</string>

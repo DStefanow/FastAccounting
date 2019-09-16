@@ -23,10 +23,23 @@ public class MainActivity extends AppCompatActivity implements ItemClicked {
     private static final int ADD_NEW_CATEGORY_INTENT_ID = 2,
             ADD_NEW_PAYMENT_ID = 3;
 
+    private AccCategoryViewModel accCategoryViewModel;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+        final TransactionAdapter transactionAdapter = new TransactionAdapter(this);
+
+        // Populate hardcoded data
+        accCategoryViewModel = new ViewModelProvider(this).get(AccCategoryViewModel.class);
+        accCategoryViewModel.getAllCategories().observe(this, new Observer<List<AccCategory>>() {
+            @Override
+            public void onChanged(List<AccCategory> accCategories) {
+                transactionAdapter.setTransactions(accCategories);
+            }
+        });
     }
 
     @Override
@@ -53,6 +66,12 @@ public class MainActivity extends AppCompatActivity implements ItemClicked {
 
         if (requestCode == ADD_NEW_CATEGORY_INTENT_ID) {
             if (resultCode == RESULT_OK) {
+                String categoryName = data.getStringExtra("categoryName");
+                int categoryParentId = data.getIntExtra("categoryParentId", 0);
+
+                // Add the new category
+                accCategoryViewModel.insertCategory(new AccCategory(categoryName, categoryParentId));
+
                 Toast.makeText(this, R.string.toast_new_category, Toast.LENGTH_SHORT).show();
             }
         } else if (requestCode == ADD_NEW_PAYMENT_ID) {

@@ -1,5 +1,6 @@
 package com.dobromir.stefanov.fastaccounting.Activities;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
@@ -7,6 +8,7 @@ import android.widget.AutoCompleteTextView;
 import android.widget.CheckBox;
 import android.widget.LinearLayout;
 import android.widget.Spinner;
+import android.widget.Toast;
 
 import androidx.appcompat.app.ActionBar;
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,8 +22,7 @@ public class AddNewCategory extends AppCompatActivity {
     LinearLayout layoutMainCategory;
     AutoCompleteTextView editTxtCategoryName;
 
-
-    // Data object
+    // Flag for subcategory menu
     boolean isSubcategory = false;
 
     @Override
@@ -38,16 +39,7 @@ public class AddNewCategory extends AppCompatActivity {
         layoutMainCategory = (LinearLayout) findViewById(R.id.layoutMainCategory);
         editTxtCategoryName = (AutoCompleteTextView) findViewById(R.id.editTxtCategoryName);
 
-        PopulateTypeSpinner();
         SetupAutofillCategoryName();
-    }
-
-    private void PopulateTypeSpinner() {
-        ArrayAdapter<CharSequence> typeAdapter = ArrayAdapter.createFromResource(this,
-                R.array.types, android.R.layout.simple_spinner_item);
-
-        typeAdapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
-        typeSpinner.setAdapter(typeAdapter);
     }
 
     private void SetupAutofillCategoryName() {
@@ -59,7 +51,23 @@ public class AddNewCategory extends AppCompatActivity {
     }
 
     public void SubmitCategory(View view) {
-        setResult(RESULT_OK);
+        String categoryName = editTxtCategoryName.getText().toString();
+        int categoryParentId = 0;
+
+        if (categoryName.length() < 3) {
+            Toast.makeText(this, R.string.toast_category_name_check, Toast.LENGTH_SHORT).show();
+            return;
+        }
+
+        if (checkBoxIsSubcategory.isChecked()) {
+            // TODO .. Implement logic here
+        }
+
+        Intent intent = new Intent();
+        intent.putExtra("categoryName", categoryName);
+        intent.putExtra("categoryParentId", categoryParentId);
+
+        setResult(RESULT_OK, intent);
         this.finish();
     }
 
